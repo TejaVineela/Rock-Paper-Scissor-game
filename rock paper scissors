@@ -1,0 +1,33 @@
+import random
+game_choice=["Rock","Paper","Scissors"]
+running =True
+user_score=0
+computer_score=0
+while running:
+    user_choice=input("Enter your choice (Rock,Paper,Scissors): ").capitalize()
+    if user_choice not in game_choice:
+        print("Invalid choice. Please choose Rock, Paper, or Scissors.")
+        continue
+    computer_choice=random.choice(game_choice)
+    print(f"you chose: {user_choice}")
+    print(f"computer chose: {computer_choice}")
+    if user_choice==computer_choice:
+        print("It's a Tie")
+    elif user_choice=="Rock" and computer_choice=="Scissors":
+        print("You won!!")
+        user_score+=1
+    elif user_choice=="Paper" and computer_choice=="Rock":
+        print("You won!!")
+        user_score+=1
+    elif user_choice=="Scissors" and computer_choice=="Paper":
+        print("You won!!")
+        user_score+=1
+    else:
+        print("You lose!")
+    play_again=input("Do you want to play Again? (Type y or n): ").lower()
+    if play_again=="n":
+        running=False
+print("Thanks for playing!!")
+print("The final scores are:")
+print(f"user score: {user_score}")
+print(f"computer score: {computer_score}")
